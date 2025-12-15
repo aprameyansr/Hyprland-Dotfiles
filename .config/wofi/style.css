@@ -1,0 +1,86 @@
+/* =========================
+   GLOBAL
+   ========================= */
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10pt;
+    color: #1E7FFF;
+}
+
+/* =========================
+   WINDOW
+   ========================= */
+window {
+    background-color: transparent;
+}
+
+/* Outer rounded container */
+#outer-box {
+    background-color: rgba(17, 17, 27, 0.902); 
+    border: 2px solid #00AFFF;               /* main-br */
+    border-radius: 40px;
+}
+
+/* =========================
+   INPUT BAR
+   ========================= */
+#input {
+    margin: 20px 40px 10px 40px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgba(17, 17, 27, 0.902);
+    color: #1E7FFF;     
+}
+
+#prompt{
+    color: #1E7FFF;
+}
+#input image {
+    margin-right: 20px;
+}
+/* =========================
+   LIST AREA
+   ========================= */
+#scroll {
+    margin: 0px 30px 30px 30px;
+    min-height: 500px;
+    max-height: 500px;
+}
+
+#inner-box {
+    padding: 8px;
+}
+
+/* =========================
+   ENTRY
+   ========================= */
+#entry {
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+/* Selected entry */
+#entry:selected {
+    background-color: #00D8E7; /* select-bg */
+}
+
+
+#entry:selected label {
+    color: #050404;
+}
+/* =========================
+   ICON
+   ========================= */
+#entry image {
+    margin-right: 10px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+/* =========================
+   TEXT
+   ========================= */
+#entry label {
+    color: inherit;
+}

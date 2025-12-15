@@ -1,0 +1,22 @@
+# Font (matches rofi)
+font=JetBrainsMono Nerd Font 10
+
+# Enable icons
+allow_images=true
+
+# Layout
+width=900
+columns=1
+
+# Behavior
+matching=contains
+insensitive=true
+hide_scroll=true
+no_actions=true
+
+# Position (centered)
+yoffset=60
+xoffset=200
+#Lines
+lines=12
+prompt=Search

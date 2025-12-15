@@ -1,0 +1,163 @@
+/* --- Catppuccin Mocha Bluish Variant (Modified Neon Version) --- */
+
+/* Neon Palette */
+@define-color neon-blue #00a6f4;
+@define-color neon-cyan #00CCD8;
+@define-color royal-blue   #307df0;
+
+/* Global rules */
+* {
+    border: none;
+    font-family: "JetbrainsMono Nerd Font";
+    font-size: 15px;
+    min-height: 10px;
+}
+
+/* Waybar */
+window#waybar {
+    background: rgba(30, 30, 46, 0);
+    border-radius: 18px;
+    margin: 40px 30px 0 30px;
+    padding: 4px 8px;
+    border: none;
+}
+
+
+/* Module defaults */
+#clock,
+#custom-cpu,
+#memory,
+#pulseaudio,
+#custom-battery,
+#network,
+#custom-notification,
+#backlight,
+#custom-power {
+    color: #cdd6f4;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding: 0 10px;
+}
+
+/* Rounded corners */
+#clock,
+#custom-cpu,
+#custom-notification,
+#pulseaudio,
+#network,
+#custom-power {
+    margin-left: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#clock,
+#memory,
+#custom-notification,
+#network,
+#custom-battery,
+#custom-power {
+    margin-right: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* LEFT MODULES - Neon */
+
+/* Clock → PURPLE */
+#clock {
+    background: @neon-blue;
+    color: #11111b;
+}
+
+/* CPU → ORANGE */
+#custom-cpu {
+    background: @neon-cyan;
+    color: #11111b;
+}
+
+/* Memory → PINK */
+#memory {
+    background: @royal-blue;
+    color: #11111b;
+}
+
+/* Workspaces */
+#workspaces {
+    background: rgba(30, 30, 46, 0.20); /* 20% opaque */    border-radius: 10px;
+    margin: 6px 5px;
+    padding: 0 6px;
+}
+
+#workspaces button { color: #cdd6f4; background: transparent; padding: 4px 4px; }
+#workspaces button.occupied { color: @royal-blue; }
+#workspaces button.active { color: @neon-blue; text-shadow: 0 0 8px @neon-blue; }
+#workspaces button:hover { color: @neon-cyan; }
+
+/* Taskbar */
+#taskbar {
+    background: rgba(30, 30, 46, 0.20); /* 20% opaque */    border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 5px;
+    margin: 6px 5px;
+}
+
+#taskbar button { padding: 0 5px; margin: 0 3px; border-radius: 6px; }
+
+/* MODULE COLORS — Neon */
+
+/* Volume → PINK */
+#pulseaudio {
+    background: @royal-blue;
+    color: #11111b;
+}
+
+/* Brightness → ORANGE */
+#backlight {
+    background: @neon-cyan;
+    color: #11111b;
+}
+
+/* Network → PURPLE */
+#network {
+    background: @neon-blue;
+    color: #11111b;
+    padding-right: 13px;
+}
+
+#custom-notification {
+    background: @royal-blue;
+    color: #11111b;
+
+    /* Equal padding prevents horizontal bias */
+    padding-left: 8px;
+    padding-right: 8px;
+
+    /* Fixed width so the icon sits centered visually */
+    min-width: 32px;
+
+    /* Micro-adjust icon position (works in GTK) */
+    -gtk-icon-transform: translateX(1px);
+}
+
+
+
+/* Power → ORANGE */
+#custom-power {
+    background: @neon-cyan;
+    color: #11111b;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+/* Battery → PURPLE */
+#custom-battery {
+    background: @neon-blue;
+    color: #11111b;
+}
+
+/* Low battery */
+#custom-battery.low {
+    background: #f38ba8;
+    color: #11111b;
+}
