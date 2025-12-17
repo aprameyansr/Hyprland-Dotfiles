@@ -1,0 +1,14 @@
+* {
+    main-bg:            #11111be6;
+    main-fg:            #1E7FFF;
+
+    /* neon blue set */
+    main-br:            #00AFFF;   // blue border
+    main-ex:            #00c8ffff;   // bright cyan highlight
+
+    select-bg:          #00D8E7;   // cyan selection
+    select-fg:          #11111bff;
+
+    separatorcolor:     transparent;
+    border-color:       #00AFFF;   // blue border
+}
