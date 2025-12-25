@@ -125,8 +125,7 @@
       "warning": 80,
       "critical": 90
     },
-    "on-click": "hyprshade toggle blue-light-filter",
-    "on-click-right": "hyprshade toggle vibrance",
+    "on-click": "pgrep -x hyprsunset >/dev/null && pkill -x hyprsunset || hyprsunset",
     "on-scroll-down": "brightnessctl -q set 1%-",
     "on-scroll-up": "brightnessctl -q set 1%+",
     "tooltip": false
