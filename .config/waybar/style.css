@@ -29,7 +29,7 @@ window#waybar {
 #idle_inhibitor,
 #memory,
 #pulseaudio,
-#custom-battery,
+#battery,
 #network,
 #custom-notification,
 #backlight,
@@ -53,11 +53,11 @@ window#waybar {
 }
 
 #clock,
-#custom-battery,
+#battery,
 #custom-notification,
 #network,
 #backlight,
-#custom-battery,
+#battery,
 #custom-power {
     margin-right: 5px;
     border-top-right-radius: 10px;
@@ -158,13 +158,13 @@ window#waybar {
 }
 
 /* Battery → PURPLE */
-#custom-battery {
+#battery {
     background: @neon-blue;
     color: #11111b;
 }
 
 /* Low battery */
-#custom-battery.low {
+#battery.warning{
     background: #f38ba8;
     color: #11111b;
 }
