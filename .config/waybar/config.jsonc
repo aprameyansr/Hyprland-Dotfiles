@@ -15,7 +15,7 @@
     "clock",
     "custom/cpu",
     "memory",
-    "custom/battery",
+    "battery",
     "wlr/taskbar"
   ],
   "modules-center": [
@@ -56,12 +56,14 @@
     "tooltip-format": "RAM usage: {used} GB / {total} GB ({percentage}%)"
   },
   
-   "custom/battery": {
-    "exec": "bash -c 'capacity=$(cat /sys/class/power_supply/BAT0/capacity); status=$(cat /sys/class/power_supply/BAT0/status); icon=\"\"; if [ \"$status\" = \"Charging\" ] || { [ \"$status\" = \"Not charging\" ] && [ $capacity -eq 100 ]; }; then icon=\"\"; tooltip_text=\"$capacity% (AC Connected)\"; elif [ \"$status\" = \"Discharging\" ]; then if [ $capacity -ge 90 ]; then icon=\"\"; elif [ $capacity -ge 70 ]; then icon=\"\"; elif [ $capacity -ge 50 ]; then icon=\"\"; elif [ $capacity -ge 30 ]; then icon=\"\"; elif [ $capacity -ge 10 ]; then icon=\"\"; else icon=\"\"; fi; time_str=$(acpi -b | grep -i battery | awk -F\", \" \"{print \\$3}\"); hours=$(echo $time_str | cut -d: -f1); minutes=$(echo $time_str | cut -d: -f2); tooltip_text=\"$capacity% left. ${hours} hours and ${minutes} minutes remaining\"; else icon=\"\"; tooltip_text=\"$capacity% ($status)\"; fi; echo \"{\\\"text\\\": \\\"$icon $capacity%\\\", \\\"tooltip\\\": \\\"$tooltip_text\\\"}\"'",
-    "return-type": "json",
-    "tooltip": true,
-    "on-click": "",
-    "interval": 1
+  "battery": {
+	  "interval": 1,
+	  "states": {"warning": 30,"critical": 15},
+    "events": {"on-discharging-warning": "notify-send -u normal 'Low Battery'","on-discharging-critical": "notify-send -u critical 'Very Low Battery'"},
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": ["","","","","","","","","",""],
+    "max-length": 25
   },
 
   "wlr/taskbar": {
