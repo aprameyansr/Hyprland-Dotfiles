@@ -122,7 +122,7 @@
         " "
       ]
     },
-    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "blueman-manager"
   },
 
