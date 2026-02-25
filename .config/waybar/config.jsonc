@@ -59,11 +59,10 @@
   "battery": {
 	  "interval": 1,
 	  "states": {"warning": 30,"critical": 15},
-    "events": {"on-discharging-warning": "notify-send -u normal 'Low Battery'","on-discharging-critical": "notify-send -u critical 'Very Low Battery'"},
+    "events": {"on-discharging-warning": "notify-send -u normal -i battery-caution 'Low Battery'","on-discharging-critical": "notify-send -u critical -i battery-empty 'Very Low Battery'"},
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-icons": ["","","","","","","","","",""],
-    "max-length": 25
   },
 
   "wlr/taskbar": {
