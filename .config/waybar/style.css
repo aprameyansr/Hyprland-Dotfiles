@@ -168,3 +168,7 @@ window#waybar {
     background: #f38ba8;
     color: #11111b;
 }
+#battery.critical{
+    background: #c30e41;
+    color: #11111b;
+}
